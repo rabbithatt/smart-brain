@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.js';
+import Particles from 'react-particles-js';
+import GlobalStyle from './Styles/globalStyle';
+import Content  from './Components/Content/content.component';
 
-function App() {
+
+const Application = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <GlobalStyle/>
+      <Particles 
+        className='particles'
+        params={{
+          particles: {
+            number: {
+              value: 30,
+              density: {
+                enable: true,
+                value_area: 200
+              }
+            }
+          }
+        }}
+      />
+     
+      <Content/>
+      {/* 
+      <Logo/>
+      <ImageLinkForm/>
+      <FaceRecognization/> */}
+    </>
   );
 }
 
-export default App;
+export default Application;
